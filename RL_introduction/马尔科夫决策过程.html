@@ -1,0 +1,569 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>马尔科夫决策过程 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="基于值函数的求解方法.html" />
+    
+    
+    <link rel="prev" href="要素.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="强化学习.html">
+            
+                <a href="强化学习.html">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="早起历史.html">
+            
+                <a href="早起历史.html">
+            
+                    
+                    早起历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="要素.html">
+            
+                <a href="要素.html">
+            
+                    
+                    要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="马尔科夫决策过程.html">
+            
+                <a href="马尔科夫决策过程.html">
+            
+                    
+                    马尔科夫决策过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="基于值函数的求解方法.html">
+            
+                <a href="基于值函数的求解方法.html">
+            
+                    
+                    基于值函数的求解方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="基于策略梯度的求解法.html">
+            
+                <a href="基于策略梯度的求解法.html">
+            
+                    
+                    基于策略梯度的求解法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="学习和规划.html">
+            
+                <a href="学习和规划.html">
+            
+                    
+                    学习和规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="探索和利用.html">
+            
+                <a href="探索和利用.html">
+            
+                    
+                    探索和利用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="深度强化学习.html">
+            
+                <a href="深度强化学习.html">
+            
+                    
+                    深度强化学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="DQN.html">
+            
+                <a href="DQN.html">
+            
+                    
+                    DQN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Doule DQN.html">
+            
+                <a href="Doule DQN.html">
+            
+                    
+                    Double DQN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="优先回放Prioritized Replay.html">
+            
+                <a href="优先回放Prioritized Replay.html">
+            
+                    
+                    优先回放（Prioritized Replay)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Dueling DQN.html">
+            
+                <a href="Dueling DQN.html">
+            
+                    
+                    Dueling DQN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="A3C.html">
+            
+                <a href="A3C.html">
+            
+                    
+                    A3C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="DDPG.html">
+            
+                <a href="DDPG.html">
+            
+                    
+                    DDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="TRPO.html">
+            
+                <a href="TRPO.html">
+            
+                    
+                    TRPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="PPO.html">
+            
+                <a href="PPO.html">
+            
+                    
+                    PPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="SAC.html">
+            
+                <a href="SAC.html">
+            
+                    
+                    SAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="TD3.html">
+            
+                <a href="TD3.html">
+            
+                    
+                    TD3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="多智能体深度强化学习.html">
+            
+                <a href="多智能体深度强化学习.html">
+            
+                    
+                    多智能体深度强化学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="MADDPG.html">
+            
+                <a href="MADDPG.html">
+            
+                    
+                    MADDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="COMA.html">
+            
+                <a href="COMA.html">
+            
+                    
+                    COMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="RIAL和DIAL.html">
+            
+                <a href="RIAL和DIAL.html">
+            
+                    
+                    RIAL和DIAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="CommNet.html">
+            
+                <a href="CommNet.html">
+            
+                    
+                    CommNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="MAAC.html">
+            
+                <a href="MAAC.html">
+            
+                    
+                    MAAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >马尔科夫决策过程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;">&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;</h2>
+<p>&#x5728;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#xFF08;Markov decision process, MDP&#xFF09;&#x662F;&#x5BF9;&#x5B8C;&#x5168;&#x53EF;&#x89C2;&#x6D4B;&#x7684;&#x73AF;&#x5883;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#x7684;&#xFF0C;&#x89C2;&#x6D4B;&#x5230;&#x7684;&#x72B6;&#x6001;&#x5185;&#x5BB9;&#x5B8C;&#x6574;&#x5730;&#x51B3;&#x5B9A;&#x4E86;&#x51B3;&#x7B56;&#x9700;&#x8981;&#x7684;&#x7279;&#x5F81;&#x3002;&#x5728;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684;&#x95EE;&#x9898;&#x90FD;&#x53EF;&#x4EE5;&#x8F6C;&#x5316;&#x4E3A;MDP&#x3002;</p>
+<p><strong>&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6027;&#xFF1A;</strong>&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6027;(Markov Property)&#x662F;&#x6307;&#x7CFB;&#x7EDF;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001; $s_{t+1}$&#x4EC5;&#x4E0E;&#x5F53;&#x524D;&#x72B6;&#x6001;$s_t$&#x6709;&#x5173;&#xFF0C;&#x800C;&#x4E0E;&#x4EE5;&#x524D;&#x7684;&#x72B6;&#x6001;&#x65E0;&#x5173;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#x516C;&#x5F0F;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#xFF1A;
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>s</mi><msup><mi>s</mi><mrow><mi mathvariant="normal">&#x2032;</mi></mrow></msup></mrow></msub><mo>=</mo><mi>P</mi><mo>[</mo><mrow><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mi mathvariant="normal">&#x2223;</mi><msub><mi>s</mi><mi>t</mi></msub><mo>]</mo><mo>=</mo><mi>P</mi><mo>[</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mi mathvariant="normal">&#x2223;</mi><msub><mi>s</mi><mn>1</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>s</mi><mi>t</mi></msub><mo>]</mo></mrow><annotation encoding="application/x-tex">
+P_{ss&apos;} = P[{s_{t+1}} |s_t]=P[s_{t+1}| s_1,...,s_t]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">s</span><span class="mord mtight"><span class="mord mathit mtight">s</span><span class="msupsub"><span class="vlist"><span style="top:-0.286em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord scriptscriptstyle cramped mtight"><span class="mord mathrm mtight">&#x2032;</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">[</span><span class="mord displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">t</span><span class="mbin mtight">+</span><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span><span class="mord mathrm">&#x2223;</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">]</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">[</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">t</span><span class="mbin mtight">+</span><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathrm">&#x2223;</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">]</span></span></span></span></span></p>
+<p><strong>&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x8FC7;&#x7A0B;&#xFF1A;</strong>&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x8FC7;&#x7A0B;&#xFF08;Markov process&#xFF09;&#x53C8;&#x79F0;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x94FE;&#xFF08;Markov chain&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x4E8C;&#x5143;&#x7EC4;<code>&lt;S,P&gt;</code>&#x8868;&#x793A;&#x3002;&#x5176;&#x4E2D;S&#x662F;&#x6709;&#x9650;&#x72B6;&#x6001;&#x96C6;&#x5408;&#xFF0C;P&#x662F;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#x3002;</p>
+<p><strong>&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#xFF1A;</strong>&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#x53EF;&#x7531;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;<code>&lt;S,A,P,R,&#x3B3;&gt;</code>&#x8868;&#x793A;&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;S&#x4E3A;&#x6709;&#x9650;&#x7684;&#x72B6;&#x6001;&#x96C6;&#x5408;&#xFF0C;A&#x4E3A;&#x6709;&#x9650;&#x7684;&#x52A8;&#x4F5C;&#x96C6;&#x5408;&#xFF0C;P&#x4E3A;&#x72B6;&#x6001;&#x7684;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#xFF0C;R&#x4E3A;&#x6536;&#x76CA;&#x51FD;&#x6570;&#xFF0C; &#x3B3;&#x8868;&#x793A;&#x6298;&#x6263;&#x56E0;&#x5B50;&#xFF0C;&#x7528;&#x6765;&#x8BA1;&#x7B97;&#x7D2F;&#x8BA1;&#x6536;&#x76CA;&#x3002;&#x8DDF;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x8FC7;&#x7A0B;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#x662F;&#x5305;&#x542B;&#x52A8;&#x4F5C;&#x7684;&#xFF0C;&#x5373;
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>P</mi><mrow><mi>s</mi><msup><mi>s</mi><mrow><mi mathvariant="normal">&#x2032;</mi></mrow></msup></mrow><mi>a</mi></msubsup><mo>=</mo><mi>P</mi><mo>[</mo><msub><mi>S</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msup><mi>s</mi><mrow><mi mathvariant="normal">&#x2032;</mi></mrow></msup><mi mathvariant="normal">&#x2223;</mi><msub><mi>S</mi><mi>t</mi></msub><mo>=</mo><mi>s</mi><mo separator="true">,</mo><msub><mi>A</mi><mi>t</mi></msub><mo>=</mo><mi>a</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">
+P_{ss&apos;} ^a = P[S_{t+1}=s&apos;|S_t=s,A_t=a]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.801892em;"></span><span class="strut bottom" style="height:1.051892em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.247em;margin-left:-0.13889em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">s</span><span class="mord mtight"><span class="mord mathit mtight">s</span><span class="msupsub"><span class="vlist"><span style="top:-0.286em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord scriptscriptstyle cramped mtight"><span class="mord mathrm mtight">&#x2032;</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span><span style="top:-0.4129999999999999em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">a</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">[</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.05764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">t</span><span class="mbin mtight">+</span><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight">&#x2032;</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathrm">&#x2223;</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.05764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord mathit">s</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">A</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord mathit">a</span><span class="mclose">]</span></span></span></span></span></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="要素.html" class="navigation navigation-prev " aria-label="Previous page: 要素">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="基于值函数的求解方法.html" class="navigation navigation-next " aria-label="Next page: 基于值函数的求解方法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"马尔科夫决策过程","level":"1.5","depth":1,"next":{"title":"基于值函数的求解方法","level":"1.6","depth":1,"path":"RL_introduction/基于值函数的求解方法.md","ref":"RL_introduction/基于值函数的求解方法.md","articles":[]},"previous":{"title":"要素","level":"1.4","depth":1,"path":"RL_introduction/要素.md","ref":"RL_introduction/要素.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"RL_introduction/马尔科夫决策过程.md","mtime":"2020-09-19T09:10:46.389Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-24T03:32:28.956Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
